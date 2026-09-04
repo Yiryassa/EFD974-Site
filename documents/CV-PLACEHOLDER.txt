@@ -1,0 +1,30 @@
+CV PLACEHOLDER
+==============
+
+This file is a placeholder for your real CV.
+
+ACTION REQUIRED:
+Replace this file with your actual CV in PDF format.
+
+Steps:
+1. Export your CV as a PDF file.
+2. Name the file exactly: CV.pdf
+3. Place it in this folder: documents/CV.pdf
+   (replacing this placeholder file)
+4. Test the "Download CV" button on the website.
+
+The "Download CV" button in the navigation links to:
+  documents/CV.pdf
+
+If you prefer a different filename, update the href in:
+  - index.html     (nav, hero button, mobile nav)
+  - about.html     (nav, mobile nav, page button)
+  - research.html  (nav, mobile nav)
+  - blog.html      (nav, mobile nav)
+  - media.html     (nav, mobile nav)
+  - contact.html   (nav, mobile nav, footer)
+  - 404.html       (nav, mobile nav)
+  - articles/*.html (nav, mobile nav)
+
+Search for:  documents/CV.pdf
+Replace with: documents/YOUR-ACTUAL-FILENAME.pdf

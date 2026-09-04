@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding Spiking Neural Networks — [YOUR FULL NAME]</title>
+  <meta name="description" content="An accessible introduction to Spiking Neural Networks — how they work, how they differ from conventional neural networks, and why they matter for efficient AI."/>
+  <meta name="keywords" content="Spiking Neural Networks, SNN, neuromorphic computing, efficient AI, spike-based computation"/>
+  <link rel="canonical" href="https://[YOUR-DOMAIN]/articles/understanding-snn.html"/>
+  <meta property="og:title" content="Understanding Spiking Neural Networks"/>
+  <meta property="og:description" content="An accessible introduction to spike-based computation."/>
+  <meta property="og:type" content="article"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/responsive.css"/>
+</head>
+<body class="page-body">
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <span class="nav__logo-name">[YOUR FULL NAME]</span>
+      <span class="nav__logo-title">AI &amp; Signal Processing Researcher</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="../index.html"    class="nav__link">Home</a></li>
+      <li><a href="../about.html"    class="nav__link">About</a></li>
+      <li><a href="../research.html" class="nav__link">Research</a></li>
+      <li><a href="../blog.html"     class="nav__link active" aria-current="page">Blog</a></li>
+      <li><a href="../media.html"    class="nav__link">Media</a></li>
+      <li><a href="../contact.html"  class="nav__link">Contact</a></li>
+    </ul>
+    <a href="../documents/CV.pdf" class="btn btn-primary btn-sm nav__cta" download>Download CV</a>
+    <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobile-menu">
+    <a href="../index.html"    class="nav__link">Home</a>
+    <a href="../about.html"    class="nav__link">About</a>
+    <a href="../research.html" class="nav__link">Research</a>
+    <a href="../blog.html"     class="nav__link active">Blog</a>
+    <a href="../media.html"    class="nav__link">Media</a>
+    <a href="../contact.html"  class="nav__link">Contact</a>
+    <a href="../documents/CV.pdf" class="btn btn-primary btn-sm" download>Download CV</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <div class="container--narrow">
+    <!-- Back link -->
+    <a href="../blog.html" class="btn btn-ghost btn-sm" style="margin-bottom:var(--space-6);padding-left:0;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-meta">
+      <span class="article-meta__cat">SNN</span>
+      <span class="article-meta__date">[Publication Date]</span>
+      <span class="article-meta__time">~8 min read</span>
+    </div>
+
+    <h1 style="font-size:clamp(1.75rem,3.5vw,2.75rem);margin-bottom:var(--space-5);">
+      Understanding Spiking Neural Networks
+    </h1>
+
+    <p style="font-size:var(--text-lg);color:var(--text-muted);line-height:1.65;max-width:62ch;">
+      An accessible introduction to spike-based computation — what it is, how it differs
+      from conventional neural networks, and why it matters for the future of efficient AI.
+    </p>
+
+    <div style="display:flex;align-items:center;gap:var(--space-4);margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid var(--gray-200);">
+      <div style="width:40px;height:40px;border-radius:50%;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div>
+        <div style="font-size:var(--text-sm);font-weight:600;color:var(--navy);">[YOUR FULL NAME]</div>
+        <div style="font-size:var(--text-xs);color:var(--text-muted);">Engineer &amp; Researcher in AI &amp; Signal Processing</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="container--narrow">
+
+    <div class="placeholder-notice" style="margin-bottom:var(--space-10);" role="note">
+      This is a draft article template. Replace all placeholder content below with your actual article text, figures and references.
+    </div>
+
+    <div class="article-content">
+
+      <h2>What is a Spiking Neural Network?</h2>
+      <p>
+        [Replace with your introduction to SNNs. Explain the core concept of spiking neurons,
+        how they differ from rate-coded artificial neurons, and the biological motivation.]
+      </p>
+      <p>
+        [Continue with a second paragraph expanding on the concept — perhaps the leaky
+        integrate-and-fire model, or how information is carried in spike timing.]
+      </p>
+
+      <blockquote>
+        [An optional key insight or quote that captures an important idea in this section.]
+      </blockquote>
+
+      <h2>How do SNNs differ from conventional neural networks?</h2>
+      <p>
+        [Replace with a comparison — conventional (rate-coded) vs spiking neurons.
+        Cover: activation functions vs threshold dynamics, dense vs sparse activity,
+        continuous vs discrete-time signalling.]
+      </p>
+
+      <!-- Example figure placeholder -->
+      <figure class="article-figure">
+        <img src="../images/research-placeholder.svg" alt="Diagram comparing conventional and spiking neural network architectures" width="600" height="280" loading="lazy"/>
+        <figcaption>Figure 1 — [Replace with a real caption describing the diagram.]</figcaption>
+      </figure>
+
+      <h2>The efficiency argument</h2>
+      <p>
+        [Replace with a section on the energy-efficiency case for SNNs — sparse firing,
+        event-driven computation, neuromorphic hardware platforms such as Intel Loihi and
+        IBM TrueNorth, and current benchmarks.]
+      </p>
+
+      <h2>Challenges and open questions</h2>
+      <p>
+        [Replace with an honest discussion of the current limitations — training SNNs
+        (non-differentiable spike function, surrogate gradients), task benchmarks,
+        hardware maturity, and the gap between biological SNNs and practical ML tools.]
+      </p>
+
+      <h2>Why this matters for audio</h2>
+      <p>
+        [Replace with a connection back to your research focus — why audio in particular
+        is an interesting domain for SNNs, the temporal nature of audio, and what research
+        directions this motivates.]
+      </p>
+
+      <!-- References -->
+      <hr style="margin:var(--space-10) 0;border:none;border-top:1px solid var(--gray-200);"/>
+
+      <h2>References</h2>
+      <ol style="padding-left:var(--space-6);">
+        <li style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3);">[Author et al., Year. Title. Journal/Conference. DOI.]</li>
+        <li style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3);">[Author et al., Year. Title. Journal/Conference. DOI.]</li>
+        <li style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3);">[Author et al., Year. Title. Journal/Conference. DOI.]</li>
+      </ol>
+
+    </div><!-- /article-content -->
+  </div>
+</article>
+
+<!-- RELATED ARTICLES -->
+<section style="background:var(--gray-50);padding:var(--space-16) 0;" aria-labelledby="related-title">
+  <div class="container">
+    <h2 id="related-title" style="margin-bottom:var(--space-8);">Related Articles</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="../images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">AI</span>
+            <span class="blog-card__date">[Date]</span>
+          </div>
+          <h3>Why SNNs Are Interesting for Efficient AI</h3>
+          <p>Exploring the energy efficiency argument for spiking computation and what challenges remain.</p>
+          <a href="snn-efficient-ai.html" class="btn btn-ghost btn-sm">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="../images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Audio Processing</span>
+            <span class="blog-card__date">[Date]</span>
+          </div>
+          <h3>Exploring Neural Approaches to Audio Compression</h3>
+          <p>A survey of how deep learning is reshaping audio coding.</p>
+          <a href="neural-audio-compression.html" class="btn btn-ghost btn-sm">Read more <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:var(--space-8);">
+      <a href="../blog.html" class="btn btn-outline">View all articles</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">[YOUR FULL NAME]</div>
+        <p class="footer__brand-desc">Engineer &amp; Researcher in Artificial Intelligence, Signal Processing and Neural Computing.</p>
+        <div class="footer__socials">
+          <a href="[YOUR-LINKEDIN-URL]" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="[YOUR-GITHUB-URL]" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../media.html">Media</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <h4>Related</h4>
+        <nav class="footer__nav" aria-label="Related links">
+          <a href="../research.html">Research Overview</a>
+          <a href="../research.html#why-snn">Why SNNs?</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="footer-year">2026</span> [YOUR FULL NAME]. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
