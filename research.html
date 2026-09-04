@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research — Spiking Neural Networks for Audio Compression — Jacques Yiryassa Sawadogo</title>
+  <meta name="description" content="Research on Spiking Neural Networks (SNNs) for audio compression, neural audio representation and efficient AI signal processing by Jacques Yiryassa Sawadogo."/>
+  <meta name="keywords" content="Spiking Neural Networks, SNN, Audio Compression, Neural Audio Compression, Neuromorphic Computing, Signal Processing, Efficient AI"/>
+  <link rel="canonical" href="https://[YOUR-DOMAIN]/research.html"/>
+  <meta property="og:title" content="Research — Spiking Neural Networks for Audio Compression"/>
+  <meta property="og:description" content="Research on SNNs for audio compression and neural signal processing."/>
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body class="page-body">
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-name">Jacques Yiryassa Sawadogo</span>
+      <span class="nav__logo-title">AI &amp; Signal Processing Researcher</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link">Home</a></li>
+      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="research.html" class="nav__link active" aria-current="page">Research</a></li>
+      <li><a href="blog.html"     class="nav__link">Blog</a></li>
+      <li><a href="media.html"    class="nav__link">Media</a></li>
+      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+    </ul>
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm nav__cta" download>Download CV</a>
+    <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobile-menu">
+    <a href="index.html"    class="nav__link">Home</a>
+    <a href="about.html"    class="nav__link">About</a>
+    <a href="research.html" class="nav__link active">Research</a>
+    <a href="blog.html"     class="nav__link">Blog</a>
+    <a href="media.html"    class="nav__link">Media</a>
+    <a href="contact.html"  class="nav__link">Contact</a>
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm" download>Download CV</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="research-page-title">
+  <div class="container--narrow">
+    <span class="section-label">Research</span>
+    <h1 id="research-page-title">Spiking Neural Networks<br/>for Audio Compression</h1>
+    <p>Exploring event-driven neural computation as a framework for efficient, biologically inspired audio signal processing.</p>
+  </div>
+</section>
+
+<!-- RESEARCH OVERVIEW -->
+<section id="overview" aria-labelledby="overview-title">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;">
+      <div>
+        <span class="section-label">Research Overview</span>
+        <h2 id="overview-title">What is this research about?</h2>
+        <p>
+          Traditional neural networks process information continuously — every neuron fires at every
+          timestep, regardless of whether the input has changed. This is computationally expensive
+          and quite different from how biological brains work.
+        </p>
+        <p>
+          Spiking Neural Networks (SNNs) model neurons more realistically: they only produce output
+          — a "spike" — when their internal state crosses a threshold. This makes them inherently
+          sparse and event-driven, which has significant implications for computational efficiency.
+        </p>
+        <p>
+          My research investigates whether this spike-based paradigm can be applied effectively to
+          audio signals — a domain defined by continuous temporal dynamics, perceptual complexity,
+          and high data rates — with a particular interest in how SNNs might support audio compression tasks.
+        </p>
+      </div>
+      <div style="text-align:center;padding:var(--space-8);background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);">
+        <img src="images/research-placeholder.svg" alt="Spiking Neural Network architecture diagram" width="500" height="270" loading="lazy"/>
+        <p style="font-size:var(--text-xs);color:var(--text-light);margin-top:var(--space-3);">SNN node connectivity illustration</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SNNs -->
+<section id="why-snn" class="bg-gray" aria-labelledby="why-snn-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why Spiking Neural Networks?</span>
+      <h2 id="why-snn-title">The case for event-driven computation</h2>
+      <p>Several properties make SNNs a compelling research direction for signal processing.</p>
+    </div>
+
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Event-driven computation</h3>
+        <p>SNNs compute only when input changes — producing spikes in response to events rather than processing every timestep continuously.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Temporal information</h3>
+        <p>The precise timing of spikes carries information, giving SNNs a natural way to encode temporal dynamics — well-suited to audio.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Sparse activity</h3>
+        <p>Neurons spike infrequently, leading to naturally sparse representations — a key property for efficient encoding and compression.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Energy efficiency</h3>
+        <p>On neuromorphic hardware, SNNs can offer substantial energy savings compared to conventional deep learning, due to their sparse firing patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO COMPRESSION -->
+<section id="audio-compression" aria-labelledby="audio-title">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);">
+      <div>
+        <span class="section-label">Audio Compression</span>
+        <h2 id="audio-title">The challenge of efficient audio coding</h2>
+        <p>
+          Audio compression is one of the most practically impactful problems in signal processing.
+          From streaming to storage, the ability to represent audio at low bitrates without sacrificing
+          quality has enormous real-world consequences.
+        </p>
+        <p>
+          Classical methods (MP3, AAC, Opus) exploit perceptual properties of the human auditory
+          system. Neural approaches add another dimension: learned representations that can
+          capture complex audio structure not accessible to hand-crafted codecs.
+        </p>
+        <p>
+          The open research question I am exploring: can spike-based representations — sparse,
+          temporal, event-driven — provide an effective framework for audio encoding? And what
+          trade-offs emerge between reconstruction quality, sparsity and computational cost?
+        </p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:var(--space-5);">Key concepts</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+          <div style="padding:var(--space-4) var(--space-5);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+            <div style="font-weight:600;color:var(--navy);margin-bottom:var(--space-1);">Audio representation</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);">How audio waveforms are encoded into a compact intermediate form suitable for neural processing.</div>
+          </div>
+          <div style="padding:var(--space-4) var(--space-5);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+            <div style="font-weight:600;color:var(--navy);margin-bottom:var(--space-1);">Neural encoding</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);">Mapping audio features into spike trains or latent neural codes that can be transmitted or stored.</div>
+          </div>
+          <div style="padding:var(--space-4) var(--space-5);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+            <div style="font-weight:600;color:var(--navy);margin-bottom:var(--space-1);">Reconstruction</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);">Decoding compressed neural representations back into perceptually acceptable audio output.</div>
+          </div>
+          <div style="padding:var(--space-4) var(--space-5);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+            <div style="font-weight:600;color:var(--navy);margin-bottom:var(--space-1);">Efficiency evaluation</div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);">Measuring performance across quality metrics (PESQ, SI-SNR), bitrate, and computational cost.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH QUESTIONS -->
+<section class="bg-gray" aria-labelledby="rq-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Research Questions</span>
+      <h2 id="rq-title">The questions driving this work</h2>
+      <p>These are the open scientific questions that motivate the research. They are questions — not yet answered conclusions.</p>
+    </div>
+
+    <div class="research-question-grid">
+      <div class="rq-card">
+        <div class="rq-card__marker">Research Question 1</div>
+        <p>Can Spiking Neural Networks provide efficient representations of audio signals that are useful for compression?</p>
+      </div>
+      <div class="rq-card">
+        <div class="rq-card__marker">Research Question 2</div>
+        <p>How can the temporal precision of spike timing be exploited to encode audio dynamics more compactly?</p>
+      </div>
+      <div class="rq-card">
+        <div class="rq-card__marker">Research Question 3</div>
+        <p>What role can sparse, event-driven representations play in reducing the bitrate requirements of audio codecs?</p>
+      </div>
+      <div class="rq-card">
+        <div class="rq-card__marker">Research Question 4</div>
+        <p>How can reconstruction quality and computational efficiency be balanced in an SNN-based audio system?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY / PIPELINE -->
+<section id="methodology" aria-labelledby="methodology-title">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start;">
+      <div>
+        <span class="section-label">Methodology</span>
+        <h2 id="methodology-title">Research pipeline</h2>
+        <p style="margin-bottom:var(--space-6);">
+          The research follows a structured pipeline from raw audio input to evaluation of the
+          reconstructed signal. Each stage introduces specific challenges and research opportunities.
+        </p>
+        <p style="color:var(--text-muted);">
+          This pipeline is a research framework, not a deployed system. Each block represents
+          an active area of investigation.
+        </p>
+      </div>
+
+      <div>
+        <div class="pipeline" role="list" aria-label="Research methodology pipeline">
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot"></div>
+              Audio Signal (input)
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot"></div>
+              Preprocessing &amp; Feature Extraction
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot"></div>
+              Neural Representation
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot" style="background:var(--teal);"></div>
+              Spiking Neural Network (encoder)
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot" style="background:var(--teal);"></div>
+              Latent Spike Representation
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot"></div>
+              Compression / Coding
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot"></div>
+              Reconstruction (decoder)
+            </div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">↓</div>
+
+          <div class="pipeline-step" role="listitem">
+            <div class="pipeline-step__label">
+              <div class="pipeline-step__dot" style="background:var(--navy);"></div>
+              Evaluation (quality + efficiency)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- PROJECTS 
+<section id="projects" class="bg-gray" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Projects</span>
+      <h2 id="projects-title">Research Projects</h2>
+      <div class="placeholder-notice" role="note">These project cards are ready to be filled with your actual project details. Replace all placeholder text with real project information.</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card__header">
+        <div>
+          <h3 style="margin-bottom:var(--space-2);">[YOUR PROJECT TITLE]</h3>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);max-width:none;">[Short description of the project objective and approach.]</p>
+        </div>
+        <span class="status-badge status-badge--active">Active</span>
+      </div>
+      <div class="project-card__body">
+        <div class="project-card__section">
+          <h4>Objective</h4>
+          <p>[Describe the main research objective of this project.]</p>
+        </div>
+        <div class="project-card__section">
+          <h4>Methodology</h4>
+          <p>[Describe the approach and methods being used.]</p>
+        </div>
+        <div class="project-card__section">
+          <h4>Technologies</h4>
+          <ul style="list-style:disc;padding-left:var(--space-4);">
+            <li>[Technology 1]</li>
+            <li>[Technology 2]</li>
+            <li>[Technology 3]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+<!-- PUBLICATIONS
+<section id="publications" aria-labelledby="publications-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Publications</span>
+      <h2 id="publications-title">Academic Publications</h2>
+    </div>
+
+    <div class="placeholder-notice" role="note">
+      Publications will be added here once available. Each entry will include: title, authors, year, venue, abstract, DOI and links.
+    </div>
+
+    <p style="margin-top:var(--space-8);color:var(--text-muted);">
+      No publications are listed yet. This section will be updated as research progresses and results are submitted for peer review.
+    </p>
+  </div>
+</section>  
+-->
+
+<!-- CONFERENCES 
+<section class="bg-gray" id="conferences" aria-labelledby="conferences-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Conferences</span>
+      <h2 id="conferences-title">Conference Presentations &amp; Attendance</h2>
+    </div>
+
+    <div class="placeholder-notice" role="note">
+      Conference presentations and relevant attended events will be listed here.
+    </div>
+  </div>
+</section> 
+-->
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">Jacques Yiryassa Sawadogo</div>
+        <p class="footer__brand-desc">Engineer &amp; Researcher in Artificial Intelligence, Signal Processing and Neural Computing.</p>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/jacques-yiryassa-s-a3762a231/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/Yiryassa?tab=repositories" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+                  </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="media.html">Media</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <h4>On This Page</h4>
+        <nav class="footer__nav" aria-label="Research page sections">
+          <a href="research.html#overview">Overview</a>
+          <a href="research.html#why-snn">Why SNNs?</a>
+          <a href="research.html#audio-compression">Audio Compression</a>
+          <a href="research.html#methodology">Methodology</a>
+          <a href="research.html#projects">Projects</a>
+          <a href="research.html#publications">Publications</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="footer-year">2026</span> Jacques Yiryassa Sawadogo. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

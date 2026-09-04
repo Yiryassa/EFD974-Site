@@ -1,0 +1,137 @@
+# =============================================================
+# .htaccess — Apache configuration for Bluehost shared hosting
+# Compatible with Apache 2.4 / standard shared hosting
+# =============================================================
+
+# ── HTTPS REDIRECT ─────────────────────────────────────────
+# Force all traffic to HTTPS (requires SSL certificate on Bluehost)
+# Uncomment after you have enabled SSL in Bluehost cPanel:
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# ── www → non-www (or non-www → www) ───────────────────────
+# Choose one. Uncomment the one that matches your preferred domain.
+
+# Redirect www → non-www:
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#   RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# Redirect non-www → www:
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTP_HOST} !^www\. [NC]
+#   RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# ── CUSTOM 404 ERROR PAGE ──────────────────────────────────
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
+# ── PREVENT DIRECTORY LISTING ──────────────────────────────
+Options -Indexes
+
+# ── PROTECT SENSITIVE FILES ────────────────────────────────
+<FilesMatch "(\.htaccess|\.htpasswd|\.git|composer\.json|composer\.lock|package\.json|package-lock\.json|\.env)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# ── DEFAULT CHARACTER SET ──────────────────────────────────
+AddDefaultCharset UTF-8
+
+# ── MIME TYPES ─────────────────────────────────────────────
+<IfModule mod_mime.c>
+  AddType image/svg+xml         .svg .svgz
+  AddType image/webp            .webp
+  AddType application/javascript .js .mjs
+  AddType text/css              .css
+  AddType application/pdf       .pdf
+  AddType font/woff             .woff
+  AddType font/woff2            .woff2
+</IfModule>
+
+# ── GZIP COMPRESSION ───────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/xml
+</IfModule>
+
+# ── BROWSER CACHING ────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — short cache (content may update)
+  ExpiresByType text/html                    "access plus 1 hour"
+
+  # CSS & JS — medium cache (add cache-busting query string when updating)
+  ExpiresByType text/css                     "access plus 1 month"
+  ExpiresByType application/javascript       "access plus 1 month"
+
+  # Images & SVGs
+  ExpiresByType image/svg+xml               "access plus 6 months"
+  ExpiresByType image/png                   "access plus 6 months"
+  ExpiresByType image/jpeg                  "access plus 6 months"
+  ExpiresByType image/webp                  "access plus 6 months"
+
+  # Fonts
+  ExpiresByType font/woff                   "access plus 1 year"
+  ExpiresByType font/woff2                  "access plus 1 year"
+
+  # PDF
+  ExpiresByType application/pdf             "access plus 1 month"
+</IfModule>
+
+# ── CACHE-CONTROL HEADERS ──────────────────────────────────
+<IfModule mod_headers.c>
+  # Don't cache HTML
+  <FilesMatch "\.(html|htm|php)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+
+  # Cache static assets
+  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff|woff2|pdf)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # ── SECURITY HEADERS ─────────────────────────────────────
+  # X-Content-Type-Options prevents MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # X-Frame-Options prevents clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # X-XSS-Protection (legacy header, still useful)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer-Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Remove server signature (Bluehost may override this)
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ── PHP SETTINGS (basic hardening) ────────────────────────
+<IfModule mod_php.c>
+  php_flag expose_php         Off
+  php_flag display_errors     Off
+  php_flag log_errors         On
+</IfModule>
+
+# ── ETags ─────────────────────────────────────────────────
+FileETag None
+Header unset ETag

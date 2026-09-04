@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jacques Yiryassa Sawadogo — Engineer & Researcher in AI, Signal Processing & Neural Computing</title>
+  <meta name="description" content="Personal website of Jacques Yiryassa Sawadogo, an engineer and researcher specialising in Spiking Neural Networks, neural audio compression and AI signal processing."/>
+  <meta name="keywords" content="Spiking Neural Networks, SNN, Audio Compression, Neural Audio Compression, Signal Processing, Neuromorphic Computing, Artificial Intelligence, Neural Computing"/>
+  <link rel="canonical" href="https://[YOUR-DOMAIN]/"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Jacques Yiryassa Sawadogo — AI & Signal Processing Researcher"/>
+  <meta property="og:description" content="Researcher in Spiking Neural Networks and neural audio compression."/>
+  <meta property="og:url" content="https://[YOUR-DOMAIN]/"/>
+  <meta property="og:site_name" content="Jacques Yiryassa Sawadogo"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Jacques Yiryassa Sawadogo — AI & Signal Processing Researcher"/>
+  <meta name="twitter:description" content="Researcher in Spiking Neural Networks and neural audio compression."/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg"/>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body class="page-body">
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Homepage">
+      <span class="nav__logo-name">Jacques Yiryassa Sawadogo</span>
+      <span class="nav__logo-title">AI &amp; Signal Processing Researcher</span>
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link active" aria-current="page">Home</a></li>
+      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="research.html" class="nav__link">Research</a></li>
+      <li><a href="blog.html"     class="nav__link">Blog</a></li>
+      <li><a href="media.html"    class="nav__link">Media</a></li>
+      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+    </ul>
+
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm nav__cta" download>
+      Download CV
+    </a>
+
+    <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html"    class="nav__link active">Home</a>
+    <a href="about.html"    class="nav__link">About</a>
+    <a href="research.html" class="nav__link">Research</a>
+    <a href="blog.html"     class="nav__link">Blog</a>
+    <a href="media.html"    class="nav__link">Media</a>
+    <a href="contact.html"  class="nav__link">Contact</a>
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm" download>Download CV</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+        Engineer &amp; Researcher
+      </div>
+
+      <h1 class="hero__title" id="hero-title">Jacques Yiryassa Sawadogo</h1>
+
+      <p class="hero__subtitle">
+        Artificial Intelligence,<br/>
+        Signal Processing &amp; Neural Computing
+      </p>
+
+      <p class="hero__pitch">
+        I explore intelligent and efficient approaches to signal processing and neural
+        computing, with a particular focus on Spiking Neural Networks and their potential
+        for audio compression.
+      </p>
+
+      <div class="btn-group">
+        <a href="documents/CV.pdf" class="btn btn-primary" download>
+          <!-- Download icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+        <a href="research.html" class="btn btn-outline">Explore My Research</a>
+        <a href="contact.html" class="btn btn-ghost">
+          Contact me
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__image-wrap">
+      <div class="hero__portrait">
+        <img src="images/profile-placeholder.svg" alt="Jacques Yiryassa Sawadogo — Profile photo" width="340" height="420" loading="eager"/>
+      </div>
+      <div class="hero__badge" aria-hidden="true">
+        <div class="hero__badge-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e6da4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div>
+          <div class="hero__badge-text">Research Focus</div>
+          <div class="hero__badge-sub">SNNs for Audio Compression</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RESEARCH FOCUS
+══════════════════════════════════════════ -->
+<section aria-labelledby="focus-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Research Focus</span>
+      <h2 id="focus-title">Exploring intelligence at the intersection of AI and audio</h2>
+      <p>My research explores the intersection of artificial intelligence, neural computation and audio signal processing.</p>
+    </div>
+
+    <div class="focus-grid">
+      <!-- Card 1 -->
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><line x1="12" y1="7" x2="4" y2="17"/><line x1="12" y1="7" x2="20" y2="17"/></svg>
+        </div>
+        <div class="focus-card__num">01</div>
+        <h3>Spiking Neural Networks</h3>
+        <p>Investigating event-driven neural computation models inspired by biological nervous systems for efficient, sparse signal processing.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <div class="focus-card__num">02</div>
+        <h3>Neural Audio Compression</h3>
+        <p>Exploring how neural representations can capture and encode audio information compactly while preserving perceptually meaningful structure.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="focus-card__num">03</div>
+        <h3>Audio Signal Processing</h3>
+        <p>Developing and applying methods to analyse, represent and transform audio signals in both classical and learned frameworks.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="focus-card">
+        <div class="focus-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="focus-card__num">04</div>
+        <h3>Efficient Artificial Intelligence</h3>
+        <p>Pursuing AI approaches that achieve strong performance with reduced computational cost, energy usage and hardware footprint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT SUMMARY
+══════════════════════════════════════════ -->
+<section class="about-summary" aria-labelledby="about-summary-title">
+  <div class="container">
+    <div class="about-summary__inner">
+      <div class="about-summary__text">
+        <span class="section-label">About Me</span>
+        <h2 id="about-summary-title">Engineer, researcher and interdisciplinary thinker</h2>
+        <p>
+          I am an engineer and researcher with a background in signal processing and artificial
+          intelligence. My work bridges the gap between biological computation and practical
+          engineering, exploring how principles derived from neuroscience can inform the design
+          of more efficient and capable AI systems.
+        </p>
+        <p>
+          My current research focuses on Spiking Neural Networks as a computational framework
+          for audio signal processing, investigating how event-driven, sparse computation can
+          address challenges in audio representation and compression.
+        </p>
+        <a href="about.html" class="btn btn-outline">Read more about me</a>
+      </div>
+
+      <div class="about-summary__stats">
+        <div class="stat-item">
+          <div class="stat-item__value">SNN</div>
+          <div class="stat-item__label">Primary Research Area</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value">Audio</div>
+          <div class="stat-item__label">Application Domain</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value">AI + DSP</div>
+          <div class="stat-item__label">Core Expertise</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value">Open</div>
+          <div class="stat-item__label">To Collaboration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FEATURED RESEARCH
+══════════════════════════════════════════ -->
+<section aria-labelledby="featured-research-title">
+  <div class="container">
+    <div class="research-featured">
+      <div>
+        <div class="research-featured__label">Featured Research</div>
+        <h2 id="featured-research-title">Spiking Neural Networks for Audio Compression</h2>
+        <p>
+          Exploring how event-driven neural computation can be used to represent,
+          process and potentially compress audio signals in an efficient and
+          biologically inspired way.
+        </p>
+        <a href="research.html" class="btn btn-outline">View full research</a>
+      </div>
+      <div class="research-featured__visual" aria-hidden="true">
+        <img src="images/research-placeholder.svg" alt="" width="300" height="160" style="border-radius:8px;max-width:100%;"/>
+      </div>
+    </div>
+
+    <div class="research-cards">
+      <article class="research-card">
+        <div class="research-card__top"></div>
+        <div class="research-card__body">
+          <span class="research-card__tag">Research Direction</span>
+          <h3>Neural Representation of Audio</h3>
+          <p>Investigating how audio signals can be encoded into compact neural representations that preserve perceptually relevant structure and temporal dynamics.</p>
+          <a href="research.html#neural-representation" class="btn btn-ghost btn-sm">
+            Learn more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <div class="research-card__top"></div>
+        <div class="research-card__body">
+          <span class="research-card__tag">Research Direction</span>
+          <h3>Spiking Neural Network Architectures</h3>
+          <p>Designing and evaluating SNN architectures capable of processing sequential audio data efficiently through event-driven, sparse computation.</p>
+          <a href="research.html#snn-architectures" class="btn btn-ghost btn-sm">
+            Learn more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="research-card">
+        <div class="research-card__top"></div>
+        <div class="research-card__body">
+          <span class="research-card__tag">Research Direction</span>
+          <h3>Efficient Audio Compression</h3>
+          <p>Studying approaches to reduce the bitrate of audio signals while maintaining acceptable perceptual quality, through novel neural coding strategies.</p>
+          <a href="research.html#compression" class="btn btn-ghost btn-sm">
+            Learn more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="research.html" class="btn btn-outline">View all research</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TECHNICAL EXPERTISE
+══════════════════════════════════════════ -->
+<section class="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Technical Expertise</span>
+      <h2 id="skills-title">Skills &amp; Knowledge Areas</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Artificial Intelligence</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Spiking Neural Networks</span>
+          <span class="skill-tag">Neural Networks</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Neuromorphic Computing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Signal Processing</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Audio Signal Processing</span>
+          <span class="skill-tag">Digital Signal Processing</span>
+          <span class="skill-tag">Neural Coding</span>
+          <span class="skill-tag">Signal Representation</span>
+          <span class="skill-tag">Time-Frequency Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Software &amp; Engineering</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C / C++</span>
+          <span class="skill-tag">Embedded Systems</span>
+          <span class="skill-tag">Data Analysis</span>
+          <span class="skill-tag">Scientific Computing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FROM THE BLOG
+══════════════════════════════════════════ -->
+<section aria-labelledby="blog-preview-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">From the Blog</span>
+      <h2 id="blog-preview-title">Thoughts on research &amp; engineering</h2>
+      <p>Technical writing on AI, signal processing and the ideas shaping my research.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">SNN</span>
+            <span class="blog-card__date">Aout 2026</span>
+          </div>
+          <h3>Understanding Spiking Neural Networks</h3>
+          <p>An accessible introduction to spike-based computation — what it is, how it differs from conventional neural networks, and why it matters for efficient AI.</p>
+          <a href="articles/understanding-snn.html" class="btn btn-ghost btn-sm">
+            Read more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">AI</span>
+            <span class="blog-card__date">Aout 2026</span>
+          </div>
+          <h3>Why SNNs Are Interesting for Efficient AI</h3>
+          <p>Exploring the energy efficiency argument for spiking computation and what challenges remain before SNNs become practical at scale.</p>
+          <a href="articles/snn-efficient-ai.html" class="btn btn-ghost btn-sm">
+            Read more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Audio Processing</span>
+            <span class="blog-card__date">Aout 2026</span>
+          </div>
+          <h3>Exploring Neural Approaches to Audio Compression</h3>
+          <p>A survey of how deep learning is reshaping audio coding and what role biologically inspired models might play in next-generation compression.</p>
+          <a href="articles/neural-audio-compression.html" class="btn btn-ghost btn-sm">
+            Read more <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="blog.html" class="btn btn-outline">Read all articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MEDIA / PUBLICATIONS
+══════════════════════════════════════════ -->
+<section class="media-section" aria-labelledby="media-preview-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Media &amp; Publications</span>
+      <h2 id="media-preview-title">Publications, talks &amp; contributions</h2>
+    </div>
+
+    <div class="placeholder-notice" role="note">
+      Publications, conference presentations, and media appearances will be listed here once available. This section is ready to be populated with real content.
+    </div>
+
+    <div class="media-list" style="margin-top: var(--space-8);">
+      <div class="media-item">
+        <div class="media-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div>
+          <div class="media-item__label">Publications</div>
+          <div class="media-item__text">Publications will appear here</div>
+        </div>
+      </div>
+
+      <div class="media-item">
+        <div class="media-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="media-item__label">Conferences</div>
+          <div class="media-item__text">Conference appearances will appear here</div>
+        </div>
+      </div>
+
+      <div class="media-item">
+        <div class="media-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <div>
+          <div class="media-item__label">Presentations &amp; Talks</div>
+          <div class="media-item__text">Presentations will appear here</div>
+        </div>
+      </div>
+
+      <div class="media-item">
+        <div class="media-item__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div>
+          <div class="media-item__label">Podcasts &amp; Interviews</div>
+          <div class="media-item__text">Interviews &amp; podcast appearances will appear here</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <a href="media.html" class="btn btn-outline">Explore Media &amp; Publications</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT CTA
+══════════════════════════════════════════ -->
+<section class="contact-cta" aria-labelledby="contact-cta-title">
+  <div class="container text-center">
+    <span class="section-label" style="color: var(--blue-soft);">Get in touch</span>
+    <h2 id="contact-cta-title">Let's Connect</h2>
+    <p>
+      I am open to research discussions, technical collaborations, academic exchanges,
+      conferences and professional opportunities.
+    </p>
+    <div class="btn-group" style="justify-content: center;">
+      <a href="contact.html" class="btn btn-blue">Contact Me</a>
+      <a href="https://www.linkedin.com/in/jacques-yiryassa-s-a3762a231/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">Jacques Yiryassa Sawadogo</div>
+        <p class="footer__brand-desc">
+          Engineer &amp; Researcher in Artificial Intelligence,<br/>
+          Signal Processing and Neural Computing.
+        </p>
+        <div class="footer__socials">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/jacques-yiryassa-s-a3762a231/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/Yiryassa?tab=repositories" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="media.html">Media</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h4>Research</h4>
+        <nav class="footer__nav" aria-label="Research navigation">
+          <a href="research.html#overview">Overview</a>
+          <a href="research.html#why-snn">Why SNNs?</a>
+          <a href="research.html#audio-compression">Audio Compression</a>
+          <a href="research.html#projects">Projects</a>
+          <a href="research.html#publications">Publications</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="footer-year">2026</span> Jacques Yiryassa Sawadogo. All rights reserved.</span>
+      <span>Engineer &amp; Researcher in AI &amp; Signal Processing</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# robots.txt — [YOUR FULL NAME] personal website
+# See: https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Block access to server-side scripts and config
+Disallow: /php/
+Disallow: /.htaccess
+Disallow: /.env
+
+# Sitemap location
+Sitemap: https://[YOUR-DOMAIN]/sitemap.xml

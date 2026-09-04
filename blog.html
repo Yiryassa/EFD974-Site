@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — AI, Signal Processing &amp; Research — Jacques Yiryassa Sawadogo</title>
+  <meta name="description" content="Technical articles on Spiking Neural Networks, audio signal processing, efficient AI and research engineering by Jacques Yiryassa Sawadogo."/>
+  <meta name="keywords" content="Spiking Neural Networks blog, SNN articles, audio processing, signal processing, AI research, neuromorphic computing"/>
+  <link rel="canonical" href="https://[YOUR-DOMAIN]/blog.html"/>
+  <meta property="og:title" content="Blog — Jacques Yiryassa Sawadogo"/>
+  <meta property="og:description" content="Technical writing on AI, signal processing and neural computing research."/>
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+  <style>
+    /* Blog-specific styles */
+    .blog-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-10);
+    }
+
+    .filter-btn {
+      padding: 6px 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 100px;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--gray-700);
+      background: var(--white);
+      transition: border-color var(--dur-fast) var(--ease),
+                  background var(--dur-fast) var(--ease),
+                  color var(--dur-fast) var(--ease);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .blog-hero-stats {
+      display: flex;
+      gap: var(--space-8);
+      margin-top: var(--space-6);
+    }
+
+    .blog-hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .blog-hero-stat__val {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .blog-hero-stat__lbl {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.55);
+    }
+
+    .blog-search {
+      position: relative;
+      max-width: 400px;
+      margin-bottom: var(--space-8);
+    }
+
+    .blog-search input {
+      width: 100%;
+      padding: 0.7rem 1rem 0.7rem 2.75rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      color: var(--text-body);
+      background: var(--white);
+      transition: border-color var(--dur-fast) var(--ease);
+    }
+
+    .blog-search input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,109,164,0.12);
+    }
+
+    .blog-search__icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--gray-500);
+      pointer-events: none;
+    }
+
+    .draft-banner {
+      background: #fff8e6;
+      border: 1px solid #f0d060;
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      color: #7a5c00;
+      margin-bottom: var(--space-10);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .reading-time {
+      font-size: var(--text-xs);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .reading-time svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="page-body">
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-name">Jacques Yiryassa Sawadogo</span>
+      <span class="nav__logo-title">AI &amp; Signal Processing Researcher</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link">Home</a></li>
+      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="research.html" class="nav__link">Research</a></li>
+      <li><a href="blog.html"     class="nav__link active" aria-current="page">Blog</a></li>
+      <li><a href="media.html"    class="nav__link">Media</a></li>
+      <li><a href="contact.html"  class="nav__link">Contact</a></li>
+    </ul>
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm nav__cta" download>Download CV</a>
+    <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobile-menu">
+    <a href="index.html"    class="nav__link">Home</a>
+    <a href="about.html"    class="nav__link">About</a>
+    <a href="research.html" class="nav__link">Research</a>
+    <a href="blog.html"     class="nav__link active">Blog</a>
+    <a href="media.html"    class="nav__link">Media</a>
+    <a href="contact.html"  class="nav__link">Contact</a>
+    <a href="documents/CV.pdf" class="btn btn-primary btn-sm" download>Download CV</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="blog-page-title">
+  <div class="container--narrow">
+    <span class="section-label">Blog</span>
+    <h1 id="blog-page-title">Thoughts on Research &amp; Engineering</h1>
+    <p>Technical writing on Spiking Neural Networks, audio processing, signal processing and the ideas shaping my research.</p>
+    <div class="blog-hero-stats" aria-label="Blog statistics">
+      <div class="blog-hero-stat">
+        <span class="blog-hero-stat__val">3</span>
+        <span class="blog-hero-stat__lbl">Draft Articles</span>
+      </div>
+      <div class="blog-hero-stat">
+        <span class="blog-hero-stat__val">4</span>
+        <span class="blog-hero-stat__lbl">Categories</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG LISTING -->
+<section aria-labelledby="articles-title">
+  <div class="container">
+
+    <div class="draft-banner" role="note">
+      <span aria-hidden="true"></span>
+      <div>
+        <strong>Draft content:</strong> The articles below are example topics prepared as structural placeholders.
+        They will be replaced with real published articles as content is written and finalised.
+      </div>
+    </div>
+
+    <!-- Search (progressive enhancement — works without JS too) -->
+    <div class="blog-search">
+      <svg class="blog-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" id="blog-search-input" placeholder="Search articles…" aria-label="Search articles"/>
+    </div>
+
+    <!-- Filters -->
+    <div class="blog-filters" role="group" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="snn">SNN</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="audio">Audio Processing</button>
+      <button class="filter-btn" data-filter="signal">Signal Processing</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+    </div>
+
+    <h2 id="articles-title" class="visually-hidden">All Articles</h2>
+
+    <!-- Article grid -->
+    <div class="blog-grid" id="article-grid">
+
+      <!-- Article 1 -->
+      <article class="blog-card" data-category="snn">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">SNN</span>
+            <span class="blog-card__date">[Date] — Draft</span>
+          </div>
+          <h3>Understanding Spiking Neural Networks</h3>
+          <p>An accessible introduction to spike-based computation — what it is, how it differs from conventional neural networks, why it matters for efficient AI and what open challenges remain.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;">
+            <span class="reading-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ~8 min read
+            </span>
+            <a href="articles/understanding-snn.html" class="btn btn-ghost btn-sm">
+              Read more <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card" data-category="ai">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">AI</span>
+            <span class="blog-card__date">[Date] — Draft</span>
+          </div>
+          <h3>Why SNNs Are Interesting for Efficient AI</h3>
+          <p>Exploring the energy efficiency argument for spiking computation — the neuromorphic hardware landscape, current benchmarks and what challenges stand between SNNs and practical deployment at scale.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;">
+            <span class="reading-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ~10 min read
+            </span>
+            <a href="articles/snn-efficient-ai.html" class="btn btn-ghost btn-sm">
+              Read more <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card" data-category="audio">
+        <div class="blog-card__img">
+          <img src="images/blog-placeholder.svg" alt="" loading="lazy" width="480" height="180"/>
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Audio Processing</span>
+            <span class="blog-card__date">[Date] — Draft</span>
+          </div>
+          <h3>Exploring Neural Approaches to Audio Compression</h3>
+          <p>A survey of how deep learning is reshaping audio coding — from end-to-end codecs to latent diffusion — and what role biologically inspired models might play in next-generation compression pipelines.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;">
+            <span class="reading-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ~12 min read
+            </span>
+            <a href="articles/neural-audio-compression.html" class="btn btn-ghost btn-sm">
+              Read more <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /article-grid -->
+
+    <!-- Empty state (shown by JS if no results) -->
+    <div id="no-results" style="display:none;text-align:center;padding:var(--space-16) 0;color:var(--text-muted);">
+      <p style="font-size:var(--text-lg);">No articles match your search.</p>
+      <button class="btn btn-outline" style="margin-top:var(--space-4);" id="clear-search">Clear search</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER / SUBSCRIBE PROMPT -->
+<section class="contact-cta" aria-labelledby="subscribe-title" style="padding:var(--space-16) 0;">
+  <div class="container text-center">
+    <span class="section-label" style="color:var(--blue-soft);">Stay updated</span>
+    <h2 id="subscribe-title">Interested in this research area?</h2>
+    <p>Get in touch if you would like to discuss any of these topics — collaboration and intellectual exchange are always welcome.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-blue">Contact Me</a>
+      <a href="research.html" class="btn btn-outline">Explore My Research</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">Jacques Yiryassa Sawadogo</div>
+        <p class="footer__brand-desc">Engineer &amp; Researcher in Artificial Intelligence, Signal Processing and Neural Computing.</p>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/jacques-yiryassa-s-a3762a231/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/Yiryassa?tab=repositories" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+                  </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="blog.html">Blog</a>
+          <a href="media.html">Media</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <nav class="footer__nav" aria-label="Blog categories">
+          <a href="blog.html">SNN</a>
+          <a href="blog.html">AI</a>
+          <a href="blog.html">Audio Processing</a>
+          <a href="blog.html">Signal Processing</a>
+          <a href="blog.html">Research</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="footer-year">2026</span> Jacques Yiryassa Sawadogo. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  /* ── BLOG FILTER & SEARCH ──────────────────────────────── */
+  (function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('#article-grid .blog-card');
+    const searchInput = document.getElementById('blog-search-input');
+    const noResults  = document.getElementById('no-results');
+    const clearBtn   = document.getElementById('clear-search');
+    let   activeFilter = 'all';
+
+    function applyFilters() {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      let visible = 0;
+
+      cards.forEach(card => {
+        const cat   = card.dataset.category || '';
+        const text  = card.textContent.toLowerCase();
+        const catOk = activeFilter === 'all' || cat === activeFilter;
+        const qOk   = !query || text.includes(query);
+
+        if (catOk && qOk) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('active'); });
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter || 'all';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns[0].classList.add('active');
+        activeFilter = 'all';
+        applyFilters();
+      });
+    }
+  })();
+</script>
+</body>
+</html>
